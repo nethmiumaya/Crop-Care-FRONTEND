@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assests/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assests/css/staffSavePopPage.css" />
+    <link rel="stylesheet" href="/assests/css/staffPage.css" />
+    <link rel="stylesheet" href="/assests/css/view/vewStaffPopUpPage.css" />
+  </head>
+  <body>
+    <div class="staff-container">
+      <!-- Search and Add Staff Section -->
+      <div class="header">
+        <div class="search-section">
+          <input
+            type="text"
+            placeholder="Search by name"
+            class="search-input"
+          />
+          <select class="dropdown">
+            <option value="">Manager</option>
+            <option value="Administrative">Administrative</option>
+            <option value="Technical">Scientist</option>
+          </select>
+          <select class="dropdown">
+            <option value="">Gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other"></option>
+          </select>
+          <button class="search-button">Search</button>
+        </div>
+        <button class="add-staff-button">Add Staff</button>
+      </div>
+
+      <!-- Table Section -->
+      <table class="staff-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample Rows -->
+          <tr>
+            <td>Nethmi Umaya</td>
+            <td>ADMINISTRATIVE</td>
+            <td>umayagk@gmail.com</td>
+            <td>FEMALE</td>
+            <td>
+              <button class="action-button delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+              <button class="action-button view">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="action-button edit">
+                <i class="fas fa-edit"></i>
+              </button>
+            </td>
+          </tr>
+          <!-- Repeat similar rows as needed -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add Staff Popup -->
+    <div class="add-staff-popup">
+      <div class="form-container">
+        <header>
+          <h1>Add Staff</h1>
+          <div class="logo">
+            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+          </div>
+        </header>
+
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="designation"
+              name="designation"
+              placeholder="Designation"
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              placeholder="Last Name"
+            />
+          </div>
+          <div class="form-group">
+            <select id="gender" name="gender">
+              <option value="">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="contact-no"
+              name="contact-no"
+              placeholder="Contact No"
+            />
+          </div>
+          <div class="form-group">
+            <input type="date" id="dob" name="dob" placeholder="dob" />
+          </div>
+
+          <div class="form-group">
+            <input
+              placeholder="Join Date"
+              type="date"
+              id="join-date"
+              name="join-date"
+            />
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email" />
+          </div>
+
+          <div class="form-group full-width">
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Address"
+            />
+          </div>
+          <div class="buttons">
+            <button type="submit" class="btn save-btn">Save</button>
+            <button type="button" class="btn back-btn">Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Update Staff Popup -->
+    <div class="update-staff-popup">
+      <div class="form-container">
+        <header>
+          <h1>Update Staff</h1>
+          <div class="logo">
+            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+          </div>
+        </header>
+
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="designation"
+              name="designation"
+              placeholder="Designation"
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              placeholder="Last Name"
+            />
+          </div>
+          <div class="form-group">
+            <select id="gender" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="contact-no"
+              name="contact-no"
+              placeholder="Contact No"
+            />
+          </div>
+          <div class="form-group">
+            <input type="date" id="dob" name="dob" placeholder="DOB" />
+          </div>
+
+          <div class="form-group">
+            <input
+              placeholder="Join Date"
+              type="date"
+              id="join-date"
+              name="join-date"
+            />
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email" />
+          </div>
+
+          <div class="form-group full-width">
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Address"
+            />
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="btn save-btn">Update</button>
+            <button type="button" class="btn back-btn">Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- View Staff Popup -->
+    <div class="view-staff-popup" id="viewStaffPopup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h1 class="header-title">View Staff</h1>
+          <img
+            src="/assests/images/real_logo.svg"
+            alt="crop-care-logo"
+            class="header-logo"
+          />
+        </div>
+        <div class="staff-details">
+          <div class="details-row">
+            <div class="detail-group">
+              <label>First name :</label>
+              <span id="viewFirstName"></span>
+            </div>
+            <div class="detail-group">
+              <label>Contact no :</label>
+              <span id="viewContactNumber"></span>
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="detail-group">
+              <label>Last name :</label>
+              <span id="viewLastName"></span>
+            </div>
+            <div class="detail-group">
+              <label>Email :</label>
+              <span id="viewEmail"></span>
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="detail-group">
+              <label>Date of birth :</label>
+              <span id="viewDateOfBirth"></span>
+            </div>
+            <div class="detail-group">
+              <label>Joined date :</label>
+              <span id="viewJoinedDate"></span>
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="detail-group">
+              <label>Address :</label>
+              <span id="viewAddress"></span>
+            </div>
+            <div class="detail-group">
+              <label>Gender :</label>
+              <span id="viewGender"></span>
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="detail-group">
+              <label>Designation :</label>
+              <span id="viewDesignation"></span>
+            </div>
+          </div>
+          <div class="button-container">
+            <button class="close-button" id="closeButton">CLOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
+    <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/controller/StaffSavePopupController.js"></script>
+    <script src="/controller/StaffPageController.js"></script>
+    <script src="/controller/updates/UpdateStaffPopUpController.js"></script>
+    <script src="/controller/view/VewStaffPopUpPageController.js"></script>
+  </body>
+</html>

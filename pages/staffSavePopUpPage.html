@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Staff</title>
+    <link rel="stylesheet" href="/assests/css/staffSavePopPage.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <header>
+        <h1>Add Staff</h1>
+        <div class="logo">
+          <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+        </div>
+      </header>
+
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            id="first-name"
+            name="first-name"
+            placeholder="First Name"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="designation"
+            name="designation"
+            placeholder="Designation"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            id="last-name"
+            name="last-name"
+            placeholder="Last Name"
+          />
+        </div>
+        <div class="form-group">
+          <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            id="contact-no"
+            name="contact-no"
+            placeholder="Contact No"
+          />
+        </div>
+        <div class="form-group">
+          <input type="date" id="dob" name="dob" placeholder="DOB" />
+        </div>
+
+        <div class="form-group">
+          <input
+            placeholder="Join Date"
+            type="date"
+            id="join-date"
+            name="join-date"
+          />
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Email" />
+        </div>
+
+        <div class="form-group full-width">
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Address"
+          />
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="btn save-btn">Save</button>
+          <button type="button" class="btn back-btn">Back</button>
+        </div>
+      </form>
+    </div>
+    <script src="/controller/StaffSavePopupController.js"></script>
+    <script src="/controller/StaffPageController.js"></script>
+  </body>
+</html>
