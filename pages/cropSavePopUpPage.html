@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Crop</title>
+    <link rel="stylesheet" href="/assests/css/cropSavePopUpPage.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <header>
+        <h1>Add Crop</h1>
+        <div class="logo">
+          <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+        </div>
+      </header>
+
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            id="common-name"
+            name="Common-name"
+            placeholder="Common Name"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="scientific-name"
+            name="scientific-name"
+            placeholder="Scientific Name"
+          />
+        </div>
+
+        <div class="form-group">
+          <div class="file-input-container">
+            <input
+              type="file"
+              id="crop-image"
+              name="crop-image"
+              accept="image/*"
+              placeholder="Crop Image"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="category"
+            name="category"
+            placeholder="Category"
+          />
+        </div>
+        <div class="form-group">
+          <input type="text" id="season" name="season" placeholder="Season" />
+        </div>
+        <div class="form-group">
+          <select id="staff" name="staff">
+            <option value="" aria-placeholder="Staff id">Select Staff</option>
+          </select>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="btn save-btn">Save</button>
+          <button type="button" class="btn back-btn">Back</button>
+        </div>
+      </form>
+    </div>
+    <script src="/controller/StaffSavePopupController.js"></script>
+    <script src="/controller/StaffPageController.js"></script>
+  </body>
+</html>

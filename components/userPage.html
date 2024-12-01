@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitory Log Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assests/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assests/css/userPage.css" />
+    <link rel="stylesheet" href="/assests/css/userSavePopUpPage.css" />
+    <link rel="stylesheet" href="/assests/css/view/viewUserPopUpPage.css" />
+    <link rel="stylesheet" href="/assests/css/update/updateUserPopUpPage.css" />
+  </head>
+  <body>
+    <div class="user-container">
+      <!-- Search and Add User Section -->
+      <div class="header">
+        <div class="search-section">
+          <input
+            type="text"
+            placeholder="Search by name"
+            class="search-input"
+          />
+          <select class="dropdown">
+            <option value="">Field Id</option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+          <button class="search-button">Search</button>
+        </div>
+        <button class="add-user-button">Add Monitory Log</button>
+      </div>
+
+      <!-- Table Section -->
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample Rows -->
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <button class="action-button delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+              <button class="action-button view">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="action-button edit">
+                <i class="fas fa-edit"></i>
+              </button>
+            </td>
+          </tr>
+          <!-- Repeat similar rows as needed -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add Monitory log Popup -->
+    <div class="add-user-popup">
+      <div class="form-container">
+        <header>
+          <h1>Add User</h1>
+          <div class="logo">
+            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+          </div>
+        </header>
+
+        <form>
+          <div class="form-group">
+            <input type="Email" id="Email" name="Email" placeholder="Email" />
+          </div>
+          <div class="form-group">
+            <input type="text" id="Role" name="Role" placeholder="Role" />
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="btn save-btn">Save</button>
+            <button type="button" class="btn back-btn">Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Update Monitory log Popup -->
+    <div class="update-user-popup">
+      <div class="form-container">
+        <header>
+          <h1>Update User</h1>
+          <div class="logo">
+            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+          </div>
+        </header>
+
+        <form>
+          <div class="form-group">
+            <input type="Email" id="Email" name="Email" placeholder="Email" />
+          </div>
+          <div class="form-group">
+            <input type="text" id="Role" name="Role" placeholder="Role" />
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="btn save-btn">Update</button>
+            <button type="button" class="btn back-btn">Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- View Monitory-Log Popup -->
+    <div class="view-user-popup" id="viewUserPopup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h1 class="header-title">View User</h1>
+          <img
+            src="/assests/images/real_logo.svg"
+            alt="crop-care-logo"
+            class="header-logo"
+          />
+        </div>
+        <div class="log-details">
+          <div class="details-row">
+            <div class="detail-group">
+              <label>Email</label>
+              <span id="viewEmail"></span>
+            </div>
+            <div class="detail-group">
+              <label>Role :</label>
+              <span id="viewRole"></span>
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button class="close-button" id="closeButton">CLOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
+    <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/controller/UserController.js"></script>
+    <script src="/controller/UserSavePOpUpController.js"></script>
+    <script src="/controller/updates/UpdateUserPopUpController.js"></script>
+    <script src="/controller/view/ViewUserPopUpPageController.js"></script>
+  </body>
+</html>

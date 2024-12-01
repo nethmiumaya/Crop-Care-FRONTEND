@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Care Management System</title>
+    <link rel="stylesheet" href="/assests/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assests/css/homePage.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="logo-container">
+        <img
+          src="/assests/images/real_logo.svg"
+          alt="Crop Care Logo"
+          class="logo"
+        />
+      </div>
+      <nav class="nav-menu">
+        <button
+          class="nav-item active"
+          data-page="\components\dashboardPage.html"
+        >
+          Dashboard
+        </button>
+        <button class="nav-item" data-page="\components\fieldPage.html">
+          Field
+        </button>
+        <button class="nav-item" data-page="\components\staffPage.html">
+          Staff
+        </button>
+        <button class="nav-item" data-page="\components\cropPage.html">
+          Crop
+        </button>
+        <button class="nav-item" data-page="\components\equipmentPage.html">
+          Equipment
+        </button>
+        <button class="nav-item" data-page="\components\vehiclePage.html">
+          Vehicle
+        </button>
+        <button class="nav-item" data-page="\components\monitoryLogPage.html">
+          Monitoring Log
+        </button>
+        <button class="nav-item" data-page="\components\userPage.html">
+          Users
+        </button>
+        <button class="nav-item logout">Logout</button>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <header class="top-header">
+        <div class="welcome-section">
+          <h1>Welcome !!!</h1>
+          <p class="user-name">Nethmi Gunasekara</p>
+        </div>
+        <div class="datetime-section">
+          <p id="current-date"></p>
+          <p id="current-time"></p>
+        </div>
+      </header>
+      <div class="content-area">
+        <iframe
+          id="contentAreaFrame"
+          src="/components/dashboardPage.html"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </main>
+    <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
+    <script src="/controller/homePage.js"></script>
+  </body>
+</html>

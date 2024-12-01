@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Segoe UI', 'Arial', sans-serif; */
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --button-brown: #8b5f3a;
+  --bg-gray: #e6e6e6;
+}
+
+body {
+  width: 1920px;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background: url("/assests/images/homePage_background.png") no-repeat center
+    center;
+  background-size: cover;
+}
+
+.sidebar {
+  width: 231px;
+  height: 100vh;
+  background-color: FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  /* background-color: var(--bg-gray); */
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.logo-container {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  flex: 1;
+}
+
+.nav-item {
+  background-color: var(--button-brown);
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+  background-color: #8b4513;
+  border-radius: 0 20px 20px 0;
+  border: none;
+}
+
+.nav-item:hover {
+  opacity: 0.9;
+}
+
+.nav-item.active {
+  background-color: var(--button-brown);
+}
+
+.nav-item:focus {
+  outline: none;
+}
+
+.logout {
+  margin-top: auto;
+}
+
+.main-content {
+  width: 1689px;
+  height: 100vh;
+}
+
+.top-header {
+  width: 1671px;
+  height: 86px;
+  margin: 10px;
+  background-color: FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.welcome-section h1 {
+  color: #8b5f3a;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.user-name {
+  color: #666;
+  font-size: 18px;
+}
+
+.datetime-section {
+  text-align: right;
+}
+
+#current-date,
+#current-time {
+  color: #333;
+  font-size: 16px;
+  margin: 3px 0;
+}
+
+.content-area {
+  width: calc(100% - 20px);
+  height: calc(100% - 115px);
+  margin: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#contentAreaFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
