@@ -124,19 +124,29 @@
   outline: none;
 }
 
-.view-field-popup .crop-image {
+.view-field-popup .field-image {
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.view-field-popup .crop-image img {
+.view-field-popup .field-image img {
   width: 150px;
   height: 150px;
   border-radius: 50%; /* Make the image circular */
   object-fit: cover;
 }
+
+#view-field-image01,
+#view-field-image02 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover;
+}
+
+/* Other existing styles */
 /* Responsive design */
 @media (max-width: 768px) {
   .view-field-popup {

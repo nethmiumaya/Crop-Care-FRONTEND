@@ -49,23 +49,7 @@
         </thead>
         <tbody>
           <!-- Sample Rows -->
-          <tr>
-            <td>ABC-7234</td>
-            <td>Remark-01</td>
-            <td>Van</td>
-            <td>Available</td>
-            <td>
-              <button class="action-button delete">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-              <button class="action-button view">
-                <i class="fas fa-eye"></i>
-              </button>
-              <button class="action-button edit">
-                <i class="fas fa-edit"></i>
-              </button>
-            </td>
-          </tr>
+          <tr></tr>
           <!-- Repeat similar rows as needed -->
         </tbody>
       </table>
@@ -124,12 +108,15 @@
 
           <div class="form-group">
             <select id="staff" name="staff">
-              <option value="">Select Vehicle</option>
-              <!-- Add staff options here -->
+              <option value="">Select Staff</option>
+              Add staff options here
             </select>
           </div>
+
           <div class="buttons">
-            <button type="submit" class="btn save-btn">Save</button>
+            <button type="submit" class="btn save-btn" id="vehicleSaveBtn">
+              Save
+            </button>
             <button type="button" class="btn back-btn">Back</button>
           </div>
         </form>
@@ -137,7 +124,7 @@
     </div>
     <!-- Update Vehicle Popup -->
     <div class="update-vehicle-popup">
-      <div class="container">
+      <div class="form-container">
         <header>
           <h1>Update Vehicle</h1>
           <div class="logo">
@@ -145,56 +132,64 @@
           </div>
         </header>
 
-        <form id="vehicleForm">
+        <form>
           <div class="form-group">
             <input
               type="text"
-              id="licensePlate"
+              id="updateLicensePlate"
               name="licensePlate"
               placeholder="License Plate Number"
             />
           </div>
-
           <div class="form-group">
             <input
               type="text"
-              id="fuelType"
+              id="updateFuelType"
               name="fuelType"
               placeholder="Fuel Type"
             />
           </div>
-
           <div class="form-group">
             <input
               type="text"
-              id="remarks"
+              id="updateRemarks"
               name="remarks"
               placeholder="Remarks"
             />
           </div>
-
           <div class="form-group">
             <input
               type="text"
-              id="category"
+              id="updateCategory"
               name="category"
               placeholder="Category"
             />
           </div>
-
           <div class="form-group">
-            <input type="text" id="status" name="status" placeholder="Status" />
+            <input
+              type="text"
+              id="updateStatus"
+              name="status"
+              placeholder="Status"
+            />
           </div>
-
           <div class="form-group">
-            <select id="staff" name="staff">
+            <select id="updateStaff" name="staff">
               <option value="">Select Staff</option>
+              <!-- Staff options will be populated here -->
             </select>
           </div>
-
           <div class="buttons">
-            <button type="submit" class="btn update-btn">Update</button>
-            <button type="button" class="btn back-btn">Back</button>
+            <button type="button" class="btn update-btn" id="updateVehicleBtn">
+              Update
+            </button>
+            <button
+              type="button"
+              class="btn back-btn"
+              id="closeUpdateVehiclePopup"
+            >
+              Back
+            </button>
           </div>
         </form>
       </div>
@@ -203,7 +198,7 @@
     <div class="view-vehicle-popup" id="viewStaffPopup">
       <div class="popup-content">
         <div class="popup-header">
-          <h1 class="header-title">View Staff</h1>
+          <h1 class="header-title">View Vehicle</h1>
           <img
             src="/assests/images/real_logo.svg"
             alt="crop-care-logo"
@@ -250,7 +245,7 @@
     </div>
     <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
     <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/controller/VehiclePageController.js"></script>
+    <script type="module" src="/controller/VehiclePageController.js"></script>
     <script src="/controller/VehicleSavePopupController.js"></script>
     <script src="/controller/updates/UpdateVehiclePopUpController.js"></script>
     <script src="/controller/view/ViewVehiclePopUpController.js"></script>

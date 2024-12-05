@@ -36,28 +36,13 @@
             <th>Field Location</th>
             <th>Extend Size</th>
             <th>Field Image</th>
+            <th>Another Image</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <!-- Sample Rows -->
-          <tr>
-            <td>Field One</td>
-            <td>34-56-9123</td>
-            <td>500kb</td>
-            <td>image one</td>
-            <td>
-              <button class="action-button delete">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-              <button class="action-button view">
-                <i class="fas fa-eye"></i>
-              </button>
-              <button class="action-button edit">
-                <i class="fas fa-edit"></i>
-              </button>
-            </td>
-          </tr>
+          <tr></tr>
           <!-- Repeat similar rows as needed -->
         </tbody>
       </table>
@@ -124,7 +109,9 @@
           </div>
 
           <div class="buttons">
-            <button type="submit" class="btn save-btn">Save</button>
+            <button type="submit" class="btn save-btn" id="fieldSaveBtn">
+              Save
+            </button>
             <button type="button" class="btn back-btn">Back</button>
           </div>
         </form>
@@ -132,71 +119,73 @@
     </div>
 
     <!-- Update Field Popup -->
-    <div class="update-field-popup">
-      <div class="form-container">
-        <header>
-          <h1>Update Field</h1>
-          <div class="logo">
-            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
-          </div>
-        </header>
-
-        <form>
-          <div class="form-group">
-            <input
-              type="text"
-              id="field-name"
-              name="field-name"
-              placeholder="Field Name"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="text"
-              id="field-location"
-              name="field-location"
-              placeholder="Field Location"
-            />
-          </div>
-
-          <div class="form-group">
-            <input
-              type="text"
-              id="extent-size"
-              name="extent-size"
-              placeholder="Extent Size"
-            />
-          </div>
-
-          <div class="form-group">
-            <div class="file-input-container">
-              <input
-                type="file"
-                id="field-image-01"
-                name="field-image-01"
-                accept="image/*"
-                placeholder="Field Image 01"
-              />
-            </div>
-            <div class="form-group">
-              <div class="file-input-container">
-                <input
-                  type="file"
-                  id="field-image-02"
-                  name="field-image-02"
-                  accept="image/*"
-                  placeholder="Field Image 02"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="buttons">
-            <button type="submit" class="btn update-btn">Update</button>
-            <button type="button" class="btn back-btn">Back</button>
-          </div>
-        </form>
+<div class="update-field-popup">
+  <div class="form-container">
+    <header>
+      <h1>Update Field</h1>
+      <div class="logo">
+        <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
       </div>
-    </div>
+    </header>
+
+    <form>
+      <div class="form-group">
+        <input
+          type="text"
+          id="updateFieldName"
+          name="field-name"
+          placeholder="Field Name"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          id="updateFieldLocation"
+          name="field-location"
+          placeholder="Field Location"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          id="updateExtentSize"
+          name="extent-size"
+          placeholder="Extent Size"
+        />
+      </div>
+      <div class="form-group">
+        <div class="file-input-container">
+          <input
+            type="file"
+            id="updateFieldImage1"
+            name="field-image-01"
+            accept="image/*"
+            placeholder="Field Image 01"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="file-input-container">
+          <input
+            type="file"
+            id="updateFieldImage2"
+            name="field-image-02"
+            accept="image/*"
+            placeholder="Field Image 02"
+          />
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="button" class="btn update-btn" id="updateFieldBtn">
+          Update
+        </button>
+        <button type="button" class="btn back-btn" id="closeUpdateFieldPopup">
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
     <!-- View Field Popup -->
     <div class="view-field-popup" id="viewFieldPopup">
       <div class="popup-content">
@@ -225,11 +214,15 @@
               <span id="viewExtendSize"></span>
             </div>
           </div>
-          <div class="field-image-01">
-            <img id="view-field-image" src="" alt="Field Image 01" />
+          <div class="details-row">
+            <div class="field-image01">
+              <img id="view-field-image01" src="" alt="Field Image 01" />
+            </div>
           </div>
-          <div class="field-image">
-            <img id="view-field-image" src="" alt="Field Image 02" />
+          <div class="details-row">
+            <div class="field-image02">
+              <img id="view-field-image02" src="" alt="Field Image 01" />
+            </div>
           </div>
           <div class="button-container">
             <button class="close-button" id="closeButton">CLOSE</button>
@@ -239,7 +232,7 @@
     </div>
     <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
     <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/controller/FieldController.js"></script>
+    <script type="module" src="/controller/FieldController.js"></script>
     <script src="/controller/FieldSavePopUpController.js"></script>
     <script src="/controller/updates/UpdateFieldPopUpController.js"></script>
     <script src="/controller/view/ViewFieldPopUpPageController.js"></script>

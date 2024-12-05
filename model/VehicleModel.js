@@ -7,10 +7,10 @@ if (jwtToken) {
     },
   });
 }
-const StaffModel = {
-  getAllStaff: function () {
+const VehicleModel = {
+  getAllVehicle: function () {
     return $.ajax({
-      url: "http://localhost:5050/main/api/v1/staff/all",
+      url: "http://localhost:5050/main/api/v1/vehicles/allvehicles",
       type: "GET",
       headers: {
         Authorization: `Bearer ${getJwtToken()}`,
@@ -20,16 +20,15 @@ const StaffModel = {
       },
       error: function (xhr, status, error) {
         console.error("Error during staff retrieval:", error);
-        throw new Error("Failed to retrieve staff");
+        throw new Error("Failed to retrieve vehicle");
       },
     });
   },
-  //save staff
-  postStaff: function (newStaff) {
-    console.log(" Post Staff : ", newStaff);
+  postVehicle: function (newStaff) {
+    console.log(" Post Vehicle : ", newStaff);
     return $.ajax({
       type: "POST",
-      url: "http://localhost:5050/main/api/v1/staff",
+      url: "http://localhost:5050/main/api/v1/vehicles",
       headers: {
         Authorization: `Bearer ${getJwtToken()}`,
       },
@@ -37,40 +36,43 @@ const StaffModel = {
       data: JSON.stringify(newStaff),
     });
   },
-  //update staff
-  updateStaff: function (id, updatedStaff) {
-    console.log("Update Staff:", updatedStaff);
+
+  updateVehicle: function (id, updatedVehicle) {
+    console.log("Update Vehicle:", updatedVehicle);
     return $.ajax({
       type: "PUT",
-      url: `http://localhost:5050/main/api/v1/staff/${id}`,
+      url: `http://localhost:5050/main/api/v1/vehicles/${id}`,
       headers: {
         Authorization: `Bearer ${getJwtToken()}`,
       },
       contentType: "application/json",
-      data: JSON.stringify(updatedStaff), // Corrected this line
+      data: JSON.stringify(updatedVehicle),
     });
   },
-  getStaffById: function (staffId) {
+
+  getVehicleById: function (vehicleCode) {
     return $.ajax({
-      url: `http://localhost:5050/main/api/v1/staff/${staffId}`,
+      url: `http://localhost:5050/main/api/v1/vehicles/${vehicleCode}`,
       type: "GET",
       headers: {
         Authorization: `Bearer ${getJwtToken()}`,
       },
       success: function (response) {
+        console.log("response", response);
         return response;
       },
       error: function (xhr, status, error) {
-        console.error("Error fetching staff details:", error);
-        throw new Error("Failed to fetch staff details");
+        console.error("Error fetching vehicles details:", error);
+        throw new Error("Failed to fetch vehicles details");
       },
     });
   },
-  //delete staff
-  deleteStaff: function (staffId) {
+
+  //delete vehicle
+  deleteVehicle: function (vehicleCode) {
     return $.ajax({
       type: "DELETE",
-      url: `http://localhost:5050/main/api/v1/staff/${staffId}`,
+      url: `http://localhost:5050/main/api/v1/vehicles/${vehicleCode}`,
       headers: {
         Authorization: `Bearer ${getJwtToken()}`,
       },
@@ -85,4 +87,4 @@ const StaffModel = {
   },
 };
 
-export default StaffModel;
+export default VehicleModel;

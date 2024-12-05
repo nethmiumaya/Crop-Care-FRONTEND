@@ -42,28 +42,13 @@
             <th>Scientific Name</th>
             <th>Category</th>
             <th>Season</th>
+            <th>Crop Image</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <!-- Sample Rows -->
-          <tr>
-            <td>Coconut</td>
-            <td>Cocos Nusifera</td>
-            <td>Tree</td>
-            <td>Off season</td>
-            <td>
-              <button class="action-button delete">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-              <button class="action-button view">
-                <i class="fas fa-eye"></i>
-              </button>
-              <button class="action-button edit">
-                <i class="fas fa-edit"></i>
-              </button>
-            </td>
-          </tr>
+          <tr></tr>
           <!-- Repeat similar rows as needed -->
         </tbody>
       </table>
@@ -120,13 +105,15 @@
             <input type="text" id="season" name="season" placeholder="Season" />
           </div>
           <div class="form-group">
-            <select id="staff" name="staff">
-              <option value="" aria-placeholder="Staff id">Select Staff</option>
+            <select id="fieldId" name="fieldId">
+              <option value="">Select field</option>
             </select>
           </div>
 
           <div class="buttons">
-            <button type="submit" class="btn save-btn">Save</button>
+            <button type="submit" class="btn save-btn" id="cropSaveBtn">
+              Save
+            </button>
             <button type="button" class="btn back-btn">Back</button>
           </div>
         </form>
@@ -146,25 +133,40 @@
           <div class="form-group">
             <input
               type="text"
-              id="common-name"
-              name="Common-name"
+              id="updateCommonName"
+              name="common-name"
               placeholder="Common Name"
             />
           </div>
           <div class="form-group">
             <input
               type="text"
-              id="scientific-name"
+              id="updateScientificName"
               name="scientific-name"
               placeholder="Scientific Name"
             />
           </div>
-
+          <div class="form-group">
+            <input
+              type="text"
+              id="updateCategory"
+              name="category"
+              placeholder="Category"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="updateSeason"
+              name="season"
+              placeholder="Season"
+            />
+          </div>
           <div class="form-group">
             <div class="file-input-container">
               <input
                 type="file"
-                id="crop-image"
+                id="updateCropImage"
                 name="crop-image"
                 accept="image/*"
                 placeholder="Crop Image"
@@ -172,25 +174,22 @@
             </div>
           </div>
           <div class="form-group">
-            <input
-              type="text"
-              id="category"
-              name="category"
-              placeholder="Category"
-            />
-          </div>
-          <div class="form-group">
-            <input type="text" id="season" name="season" placeholder="Season" />
-          </div>
-          <div class="form-group">
-            <select id="staff" name="staff">
-              <option value="" aria-placeholder="Staff id">Select Staff</option>
+            <select id="updateFieldId" name="fieldId">
+              <option value="">Select Field</option>
+              <!-- Field options will be populated here -->
             </select>
           </div>
-
           <div class="buttons">
-            <button type="submit" class="btn update-btn">Update</button>
-            <button type="button" class="btn back-btn">Back</button>
+            <button type="button" class="btn update-btn" id="updateCropBtn">
+              Update
+            </button>
+            <button
+              type="button"
+              class="btn back-btn"
+              id="closeUpdateCropPopup"
+            >
+              Back
+            </button>
           </div>
         </form>
       </div>
@@ -209,29 +208,44 @@
         <div class="crop-details">
           <div class="details-row">
             <div class="detail-group">
-              <label>Crop Name:</label>
-              <span id="viewCropName"></span>
+              <label>Common Name:</label>
+              <span id="viewcommonName"></span>
             </div>
             <div class="detail-group">
-              <label>Category:</label>
+              <label>Scientific Name::</label>
+              <span id="viewScientificName"></span>
+            </div>
+          </div>
+          <!-- <div class="details-row">
+            <div class="detail-group">
+              <label>cropImage:</label>
+              <span id="viewSeason"></span>
+            </div>
+          </div> -->
+          <div class="details-row">
+            <div class="detail-group">
+              <label>category:</label>
               <span id="viewCategory"></span>
             </div>
           </div>
           <div class="details-row">
             <div class="detail-group">
-              <label>Season:</label>
+              <label>season:</label>
               <span id="viewSeason"></span>
             </div>
           </div>
           <div class="details-row">
             <div class="detail-group">
-              <label>Staff:</label>
-              <span id="viewStaff"></span>
+              <label>Field Id::</label>
+              <span id="viewField"></span>
             </div>
           </div>
-          <div class="crop-image">
-            <img id="view-crop-image" src="" alt="Crop Image" />
+          <div class="details-row">
+            <div class="crop-image">
+              <img id="view-crop-image" src="" alt="Crop Image" />
+            </div>
           </div>
+
           <div class="button-container">
             <button class="close-button" id="closeButton">CLOSE</button>
           </div>
@@ -240,7 +254,7 @@
     </div>
     <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
     <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/controller/CropController.js"></script>
+    <script type="module" src="/controller/CropController.js"></script>
     <script src="/controller/CropControllerSavePopUpController.js"></script>
     <script src="/controller/updates/UpdateCropPopUpController.js"></script>
     <script src="/controller/view/ViewCropPopUpPageCntroller.js"></script>

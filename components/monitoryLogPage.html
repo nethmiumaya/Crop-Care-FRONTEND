@@ -45,35 +45,18 @@
         </thead>
         <tbody>
           <!-- Sample Rows -->
-          <tr>
-            <td>2024.11.25</td>
-            <td>image 01</td>
-            <td>observed one</td>
-
-            <td>
-              <button class="action-button delete">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-              <button class="action-button view">
-                <i class="fas fa-eye"></i>
-              </button>
-              <button class="action-button edit">
-                <i class="fas fa-edit"></i>
-              </button>
-            </td>
-          </tr>
+          <tr></tr>
           <!-- Repeat similar rows as needed -->
         </tbody>
       </table>
     </div>
-
-    <!-- Add Monitory log Popup -->
+    <!-- Add Monitory Log Popup -->
     <div class="add-log-popup">
       <div class="form-container">
         <header>
           <h1>Add Monitory Log</h1>
           <div class="logo">
-            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+            <!-- <img src="/assets/images/real_logo.svg" alt="Crop Care Logo" /> -->
           </div>
         </header>
 
@@ -106,19 +89,25 @@
             </div>
           </div>
           <div class="form-group">
-            <select id="staff" name="staff">
-              <option value="" aria-placeholder="Staff id">Select Staff</option>
+            <select id="field" name="field">
+              <option value="">Select field</option>
             </select>
           </div>
+          <!-- <div class="form-group">
+            <input type="text" id="staff" name="staff" placeholder="staff" />
+          </div> -->
 
           <div class="buttons">
-            <button type="submit" class="btn save-btn">Save</button>
+            <button type="submit" class="btn save-btn" id="monitoryLogSaveBtn">
+              Save
+            </button>
             <button type="button" class="btn back-btn">Back</button>
           </div>
         </form>
       </div>
     </div>
-    <!-- Update Monitory log Popup -->
+
+    <!-- Update Monitory Log Popup -->
     <div class="update-log-popup">
       <div class="form-container">
         <header>
@@ -132,7 +121,7 @@
           <div class="form-group">
             <input
               type="date"
-              id="log-date"
+              id="updateLogDate"
               name="log-date"
               placeholder="Log Date"
             />
@@ -140,31 +129,36 @@
           <div class="form-group">
             <input
               type="text"
-              id="observation"
+              id="updateObservation"
               name="observation"
               placeholder="Observation"
             />
           </div>
           <div class="form-group">
-            <div class="log-input-container">
+            <div class="file-input-container">
               <input
                 type="file"
-                id="log-image-01"
-                name="log-image-01"
+                id="updateLogImage"
+                name="log-image"
                 accept="image/*"
-                placeholder="Log Image 01"
+                placeholder="Log Image"
               />
             </div>
           </div>
           <div class="form-group">
-            <select id="staff" name="staff">
-              <option value="" aria-placeholder="Staff id">Select Staff</option>
+            <select id="updateFieldId" name="fieldId">
+              <option value="">Select Field</option>
+              <!-- Field options will be populated here -->
             </select>
           </div>
 
           <div class="buttons">
-            <button type="submit" class="btn save-btn">Update</button>
-            <button type="button" class="btn back-btn">Back</button>
+            <button type="button" class="btn update-btn" id="updateMonitoryLogBtn">
+              Update
+            </button>
+            <button type="button" class="btn back-btn" id="closeUpdateLogPopup">
+              Back
+            </button>
           </div>
         </form>
       </div>
@@ -193,8 +187,8 @@
           </div>
           <div class="details-row">
             <div class="detail-group">
-              <label>Staff:</label>
-              <span id="viewStaff"></span>
+              <label>Field:</label>
+              <span id="viewField"></span>
             </div>
           </div>
           <div class="log-image">
@@ -208,7 +202,7 @@
     </div>
     <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
     <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/controller/MonitoryLogController.js"></script>
+    <script type="module" src="/controller/MonitoryLogController.js"></script>
     <script src="/controller/MonitoryLogSavePagePopUpController.js"></script>
     <script src="/controller/updates/UpdateLogPopUpController.js"></script>
     <script src="/controller/view/ViewLogPopUpPageController.js"></script>
