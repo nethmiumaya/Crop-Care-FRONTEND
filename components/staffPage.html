@@ -50,27 +50,7 @@
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
-          <!-- Sample Rows -->
-          <tr>
-            <td>Nethmi Umaya</td>
-            <td>ADMINISTRATIVE</td>
-            <td>umayagk@gmail.com</td>
-            <td>FEMALE</td>
-            <td>
-              <button class="action-button delete">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-              <button class="action-button view">
-                <i class="fas fa-eye"></i>
-              </button>
-              <button class="action-button edit">
-                <i class="fas fa-edit"></i>
-              </button>
-            </td>
-          </tr>
-          <!-- Repeat similar rows as needed -->
-        </tbody>
+        <tbody></tbody>
       </table>
     </div>
 
@@ -151,8 +131,19 @@
               placeholder="Address"
             />
           </div>
+          <div class="form-group full-width">
+            <select id="role" required>
+              <option value="" disabled selected hidden>role</option>
+              <option value="MANAGER">MANAGER</option>
+              <option value="ADMINISTRATIVE">ADMINISTRATIVE</option>
+              <option value="SCIENTIST">SCIENTIST</option>
+              <option value="OTHER">Other</option>
+            </select>
+          </div>
           <div class="buttons">
-            <button type="submit" class="btn save-btn">Save</button>
+            <button type="button" class="btn save-btn" id="staffSaveBtn">
+              Save
+            </button>
             <button type="button" class="btn back-btn">Back</button>
           </div>
         </form>
@@ -172,7 +163,7 @@
           <div class="form-group">
             <input
               type="text"
-              id="first-name"
+              id="updateFirstName"
               name="first-name"
               placeholder="First Name"
             />
@@ -180,64 +171,82 @@
           <div class="form-group">
             <input
               type="text"
-              id="designation"
+              id="updateDesignation"
               name="designation"
               placeholder="Designation"
             />
           </div>
-
           <div class="form-group">
             <input
               type="text"
-              id="last-name"
+              id="updateLastName"
               name="last-name"
               placeholder="Last Name"
             />
           </div>
-          <div class="form-group">
-            <select id="gender" name="gender">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
+          <div class="form-group full-width">
+            <select id="updateGender" required>
+              <option value="" disabled selected hidden>gender</option>
+              <option value="MALE">MALE</option>
+              <option value="FEMALE">FEMALE</option>
+              <option value="OTHER">Other</option>
             </select>
           </div>
-
           <div class="form-group">
             <input
               type="text"
-              id="contact-no"
+              id="updateContactNumber"
               name="contact-no"
               placeholder="Contact No"
             />
           </div>
           <div class="form-group">
-            <input type="date" id="dob" name="dob" placeholder="DOB" />
+            <input type="date" id="updateDob" name="dob" placeholder="DOB" />
           </div>
-
           <div class="form-group">
             <input
               placeholder="Join Date"
               type="date"
-              id="join-date"
+              id="updateJoinDate"
               name="join-date"
             />
           </div>
           <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="Email" />
+            <input
+              type="email"
+              id="updateEmail"
+              name="email"
+              placeholder="Email"
+            />
           </div>
-
           <div class="form-group full-width">
             <input
               type="text"
-              id="address"
+              id="updateAddress"
               name="address"
               placeholder="Address"
             />
           </div>
-
+          <div class="form-group full-width">
+            <select id="updateRole" required>
+              <option value="" disabled selected hidden>role</option>
+              <option value="MANAGER">MANAGER</option>
+              <option value="ADMINISTRATIVE">ADMINISTRATIVE</option>
+              <option value="SCIENTIST">SCIENTIST</option>
+              <option value="OTHER">Other</option>
+            </select>
+          </div>
           <div class="buttons">
-            <button type="submit" class="btn save-btn">Update</button>
-            <button type="button" class="btn back-btn">Back</button>
+            <button type="button" class="btn save-btn" id="updateStaffBtn">
+              Update
+            </button>
+            <button
+              type="button"
+              class="btn back-btn"
+              id="closeUpdateStaffPopup"
+            >
+              Back
+            </button>
           </div>
         </form>
       </div>
@@ -309,7 +318,7 @@
     <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
     <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
     <script src="/controller/StaffSavePopupController.js"></script>
-    <script src="/controller/StaffPageController.js"></script>
+    <script type="module" src="/controller/StaffPageController.js"></script>
     <script src="/controller/updates/UpdateStaffPopUpController.js"></script>
     <script src="/controller/view/VewStaffPopUpPageController.js"></script>
   </body>

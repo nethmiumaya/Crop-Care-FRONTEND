@@ -1,3 +1,5 @@
+import AuthModel from "../model/AuthModel.js";
+
 // Toggle menu for mobile responsiveness
 function myMenuFunction() {
   var i = document.getElementById("navMenu");
@@ -88,30 +90,26 @@ function forgotPassword() {
 // Handle login
 function handleLogin(event) {
   event.preventDefault(); // Prevent form submission
-
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-
-  $.ajax({
-    url: "http://localhost:5050/main/api/v1/auth/signIn", // Replace with your back-end login URL
-    type: "POST",
-    contentType: "application/json",
-    data: JSON.stringify({ email: username, password: password }),
-    success: function (response) {
-      // Handle successful login
-      console.log("Login successful:", response);
-      // Store the JWT in local storage
-      localStorage.setItem("token", response.token);
-      // Redirect to another page or show a success message
-      window.location.href = "/pages/homePage.html"; // Example redirect
-    },
-    error: function (xhr, status, error) {
-      // Handle login error
-      console.error("Login failed:", error);
-      // Show an error message to the user
-      alert("Login failed: " + error);
-    },
-  });
+  alert("login");
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const signInDto = { email: username, password: password };
+  AuthModel.signIn(signInDto)
+    .done((response, textStatus, jqXHR) => {
+      if (jqXHR.status === 201) {
+        // Store the JWT in cookie storage
+        localStorage.setItem("jwtToken", JSON.stringify(response.token));
+        // Redirect to another page or show a success message
+        window.location.href = "/pages/homePage.html";
+      } else {
+        console.log("Sign-in failed:", response);
+        alert("Invalid username or password");
+      }
+    })
+    .fail((xhr, status, error) => {
+      console.error("Sign-in failed:", error);
+      alert("Sign-in failed: " + error);
+    });
 }
 
 // Handle sign up
@@ -146,3 +144,12 @@ function handleSignUp(event) {
     },
   });
 }
+
+// Attach functions to the window object
+window.myMenuFunction = myMenuFunction;
+window.login = login;
+window.register = register;
+window.verify = verify;
+window.forgotPassword = forgotPassword;
+window.handleLogin = handleLogin;
+window.handleSignUp = handleSignUp;
