@@ -119,73 +119,79 @@
     </div>
 
     <!-- Update Field Popup -->
-<div class="update-field-popup">
-  <div class="form-container">
-    <header>
-      <h1>Update Field</h1>
-      <div class="logo">
-        <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
-      </div>
-    </header>
 
-    <form>
-      <div class="form-group">
-        <input
-          type="text"
-          id="updateFieldName"
-          name="field-name"
-          placeholder="Field Name"
-        />
+    <!-- Update Field Popup -->
+    <div class="update-field-popup">
+      <div class="form-container">
+        <header>
+          <h1>Update Field</h1>
+          <div class="logo">
+            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+          </div>
+        </header>
+
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              id="updateFieldName"
+              name="field-name"
+              placeholder="Field Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="updateFieldLocation"
+              name="field-location"
+              placeholder="Field Location"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="updateExtentSize"
+              name="extent-size"
+              placeholder="Extent Size"
+            />
+          </div>
+          <div class="form-group">
+            <div class="file-input-container">
+              <input
+                type="file"
+                id="updateFieldImage1"
+                name="field-image-01"
+                accept="image/*"
+                placeholder="Field Image 01"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="file-input-container">
+              <input
+                type="file"
+                id="updateFieldImage2"
+                name="field-image-02"
+                accept="image/*"
+                placeholder="Field Image 02"
+              />
+            </div>
+          </div>
+          <div class="buttons">
+            <button type="button" class="btn update-btn" id="updateFieldBtn">
+              Update
+            </button>
+            <button
+              type="button"
+              class="btn back-btn"
+              id="closeUpdateFieldPopup"
+            >
+              Back
+            </button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <input
-          type="text"
-          id="updateFieldLocation"
-          name="field-location"
-          placeholder="Field Location"
-        />
-      </div>
-      <div class="form-group">
-        <input
-          type="text"
-          id="updateExtentSize"
-          name="extent-size"
-          placeholder="Extent Size"
-        />
-      </div>
-      <div class="form-group">
-        <div class="file-input-container">
-          <input
-            type="file"
-            id="updateFieldImage1"
-            name="field-image-01"
-            accept="image/*"
-            placeholder="Field Image 01"
-          />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="file-input-container">
-          <input
-            type="file"
-            id="updateFieldImage2"
-            name="field-image-02"
-            accept="image/*"
-            placeholder="Field Image 02"
-          />
-        </div>
-      </div>
-      <div class="buttons">
-        <button type="button" class="btn update-btn" id="updateFieldBtn">
-          Update
-        </button>
-        <button type="button" class="btn back-btn" id="closeUpdateFieldPopup">
-          Back
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
+    </div>
     <!-- View Field Popup -->
     <div class="view-field-popup" id="viewFieldPopup">
       <div class="popup-content">

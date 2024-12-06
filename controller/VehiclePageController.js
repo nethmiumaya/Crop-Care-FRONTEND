@@ -96,9 +96,19 @@ $(document).ready(function () {
       staffId: $("#updateStaff").val(),
     };
 
-    await updateVehicleMember(vehicleCode, updatedVehicle); // Pass the id to the function
-    window.location.reload();
-    closeUpdateVehiclePopup();
+    try {
+      await updateVehicleMember(vehicleCode, updatedVehicle); // Pass the id to the function
+      await VehicleModel.updateVehicleDriver(
+        vehicleCode,
+        updatedVehicle.staffId
+      ); // Update the vehicle driver
+      alert("Vehicle updated successfully");
+      window.location.reload();
+      closeUpdateVehiclePopup();
+    } catch (error) {
+      //console.error("Error updating vehicle:", error);
+      alert("Failed to update vehicle");
+    }
   });
   // Fetch and populate staff data in the combo box
   async function loadStaffData() {
@@ -114,8 +124,8 @@ $(document).ready(function () {
     }
   }
 
-  // Fetch and populate staff data in the combo box
-  async function loadStaffData() {
+  // Fetch and populate staff data in the combo box for update
+  async function loadUpdateStaffData() {
     try {
       const allStaffData = await StaffModel.getAllStaff();
       const staffSelect = $("#updateStaff");
@@ -128,6 +138,7 @@ $(document).ready(function () {
     }
   }
   loadStaffData();
+  loadUpdateStaffData();
   function attachEventHandlers() {
     //View Vehicle Details
     $(".action-button.view").on("click", function () {
@@ -139,7 +150,11 @@ $(document).ready(function () {
       $("#viewRemarks").text(vehicleData.remarks);
       $("#vewCategory").text(vehicleData.vehicleCategory); // Update property name if needed
       $("#viewStatus").text(vehicleData.status);
-      $("#viewStaff").text(vehicleData.staff); // Update property name if needed
+      $("#viewStaff").text(
+        vehicleData.staff
+          ? `${vehicleData.staff.firstName} ${vehicleData.staff.lastName}`
+          : "N/A"
+      ); // Display staff name
       $(".view-vehicle-popup").fadeIn();
     });
     // Edit vehicle details
@@ -202,17 +217,13 @@ const addVehicleMember = async (vehicleDTO) => {
       throw new Error("Failed to add vehicle");
     });
 };
+
 const updateVehicleMember = async (id, vehicleDTO) => {
   console.log("Update Vehicle:", vehicleDTO);
-  VehicleModel.updateVehicle(id, vehicleDTO)
-    .done((response, textStatus, jqXHR) => {
-      if (jqXHR.status !== 200) {
-        alert("Failed to update vehicle");
-      }
-    })
-    .fail((xhr, status, error) => {
-      console.error("Error during vehicle update:", error);
-      alert("Failed to update vehicle");
-      throw new Error("Failed to update vehicle");
-    });
+  try {
+    await VehicleModel.updateVehicle(id, vehicleDTO);
+  } catch (error) {
+    console.error("Error during vehicle update:", error);
+    throw new Error("Failed to update vehicle");
+  }
 };

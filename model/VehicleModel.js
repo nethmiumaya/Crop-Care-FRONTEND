@@ -85,6 +85,30 @@ const VehicleModel = {
       },
     });
   },
+
+
+  // update Vehicle Staff.
+
+  updateVehicleDriver: function (vehicleCode, driverId) {
+    return $.ajax({
+      type: "PUT",
+      url: `http://localhost:5050/main/api/v1/vehicles`,
+      headers: {
+        Authorization: `Bearer ${getJwtToken()}`,
+      },
+      data: {
+        vehicleCode: vehicleCode,
+        driverId: driverId,
+      },
+      success: function () {
+        return "Vehicle driver updated successfully";
+      },
+      error: function (xhr, status, error) {
+        console.error("Error updating vehicle driver:", error);
+        throw new Error("Failed to update vehicle driver");
+      },
+    });
+  },
 };
 
 export default VehicleModel;

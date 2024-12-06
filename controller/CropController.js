@@ -124,10 +124,9 @@ $(document).ready(function () {
       category: $("#updateCategory").val(),
       season: $("#updateSeason").val(),
       fieldId: $("#updateFieldId").val(),
-      cropImage: $("#updateCropImage")[0].files[0], // Get the selected file
+      cropImage: $("#updateCropImage")[0].files[0],
     };
-
-    console.log("Updated Crop Data:", updatedCrop); // Log the data being sent
+    console.log("Updated Crop Data:", updatedCrop);
 
     try {
       const formData = new FormData();
@@ -140,6 +139,11 @@ $(document).ready(function () {
 
       const response = await CropModel.updateCrop(cropCode, formData);
       console.log("Crop updated successfully:", response);
+
+      // Update the crop field
+      await CropModel.updateCropField(cropCode, updatedCrop.fieldId);
+      console.log("Crop field updated successfully");
+
       alert("Crop updated successfully");
       window.location.reload();
       closeUpdateCropPopup();

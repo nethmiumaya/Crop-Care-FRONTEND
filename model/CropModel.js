@@ -96,6 +96,54 @@ const CropModel = {
       },
     });
   },
+  //update crop field
+  updateCropField: function (cropId, fieldId) {
+    return $.ajax({
+      type: "PUT",
+      url: `http://localhost:5050/main/api/v1/crop`,
+      headers: {
+        Authorization: `Bearer ${getJwtToken()}`,
+      },
+      data: {
+        cropId: cropId,
+        fieldId: fieldId,
+      },
+      success: function (response) {
+        console.log("Crop field updated successfully:", response);
+        return response;
+      },
+      error: function (xhr, status, error) {
+        console.error("Error during crop field update:", error);
+        throw new Error("Failed to update crop field");
+      },
+    });
+  },
+  //update crop field
+  updateCropField: function (cropId, fieldId) {
+    const token = getJwtToken();
+    console.log("JWT Token:", token); // Log the JWT token
+    return $.ajax({
+      type: "PUT",
+      url: `http://localhost:5050/main/api/v1/crop`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      data: {
+        cropId: cropId,
+        fieldId: fieldId,
+      },
+      success: function (response) {
+        console.log("Crop field updated successfully:", response);
+        return response;
+      },
+      error: function (xhr, status, error) {
+        console.error("Error during crop field update:", error);
+        console.error("Response status:", xhr.status); // Log the response status
+        console.error("Response text:", xhr.responseText); // Log the response text
+        throw new Error("Failed to update crop field");
+      },
+    });
+  },
 };
 
 export default CropModel;

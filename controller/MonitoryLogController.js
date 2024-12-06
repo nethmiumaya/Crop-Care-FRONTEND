@@ -88,8 +88,8 @@ $(document).ready(function () {
       console.error("Error loading field data:", error);
     }
   }
-
-  async function loadFieldData() {
+  loadFieldData();
+  async function updateloadFieldData() {
     try {
       const allFieldData = await FieldModel.getAllField();
       const fieldSelect = $("#updateFieldId");
@@ -102,7 +102,7 @@ $(document).ready(function () {
     }
   }
 
-  loadFieldData();
+  updateloadFieldData();
 
   // Handle form submission for adding a new monitory log
   $("#monitoryLogSaveBtn").on("click", async function (e) {
