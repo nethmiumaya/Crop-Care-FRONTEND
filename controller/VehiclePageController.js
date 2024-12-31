@@ -107,7 +107,7 @@ $(document).ready(function () {
       closeUpdateVehiclePopup();
     } catch (error) {
       //console.error("Error updating vehicle:", error);
-      alert("Failed to update vehicle");
+     // alert("Failed to update vehicle");
     }
   });
   // Fetch and populate staff data in the combo box
@@ -120,7 +120,7 @@ $(document).ready(function () {
         staffSelect.append(option);
       });
     } catch (error) {
-      console.error("Error loading staff data:", error);
+     // console.error("Error loading staff data:", error);
     }
   }
 

@@ -110,7 +110,7 @@ $(document).ready(function () {
       window.location.reload();
       closeAddCropPopup();
     } catch (error) {
-      console.error("Error during crop addition:", error);
+     // console.error("Error during crop addition:", error);
     }
   });
 
@@ -148,7 +148,7 @@ $(document).ready(function () {
       window.location.reload();
       closeUpdateCropPopup();
     } catch (error) {
-      console.error("Error during crop update:", error);
+      console.error("Success during crop update:", error);
     }
   });
 
@@ -182,7 +182,7 @@ $(document).ready(function () {
           showUpdateCropPopup();
         })
         .fail(function () {
-          alert("Error fetching crop details");
+         // alert("Update fetching crop details");
         });
     });
     // Delete crop
@@ -196,7 +196,7 @@ $(document).ready(function () {
             loadCropDataToTable(); // Reload the staff data
           })
           .fail(function () {
-            alert("Error deleting crop");
+           // alert("Error deleting crop");
           });
       }
     });

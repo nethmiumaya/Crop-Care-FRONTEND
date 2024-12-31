@@ -115,6 +115,25 @@ $(document).ready(function () {
     }
   });
 
+  // filepath: /c:/Users/Umaya/Documents/Crop-Care-FRONTEND/controller/FieldController.js
+  // ...existing code...
+
+  // Function to initialize the map
+  function initMap(lat, lng) {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: lat, lng: lng },
+      zoom: 13,
+    });
+
+    new google.maps.Marker({
+      position: { lat: lat, lng: lng },
+      map: map,
+      title: "Field Location",
+    });
+  }
+
+  // ...existing code...
+
   function attachEventHandlers() {
     // View field details
     $(".action-button.view").on("click", function () {
@@ -131,6 +150,11 @@ $(document).ready(function () {
         "src",
         `data:image/jpeg;base64,${fieldData.fieldImage2}`
       );
+
+      // Extract latitude and longitude from fieldLocation and initialize the map
+      const [lat, lng] = fieldData.fieldLocation.split(",").map(Number);
+      initMap(lat, lng);
+
       $(".view-field-popup").fadeIn();
     });
     // Edit field details

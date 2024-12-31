@@ -193,6 +193,7 @@
       </div>
     </div>
     <!-- View Field Popup -->
+    <!-- View Field Popup -->
     <div class="view-field-popup" id="viewFieldPopup">
       <div class="popup-content">
         <div class="popup-header">
@@ -221,14 +222,7 @@
             </div>
           </div>
           <div class="details-row">
-            <div class="field-image01">
-              <img id="view-field-image01" src="" alt="Field Image 01" />
-            </div>
-          </div>
-          <div class="details-row">
-            <div class="field-image02">
-              <img id="view-field-image02" src="" alt="Field Image 01" />
-            </div>
+            <div id="map" style="height: 400px; width: 100%"></div>
           </div>
           <div class="button-container">
             <button class="close-button" id="closeButton">CLOSE</button>
@@ -242,5 +236,6 @@
     <script src="/controller/FieldSavePopUpController.js"></script>
     <script src="/controller/updates/UpdateFieldPopUpController.js"></script>
     <script src="/controller/view/ViewFieldPopUpPageController.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
   </body>
 </html>
