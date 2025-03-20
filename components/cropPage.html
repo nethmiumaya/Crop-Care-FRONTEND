@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assests/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assests/css/cropPage.css" />
+    <link rel="stylesheet" href="/assests/css/cropSavePopUpPage.css" />
+    <link rel="stylesheet" href="/assests/css/view/viewCropPopUpPage.css" />
+  </head>
+  <body>
+    <div class="crop-container">
+      <!-- Search and Add Crop Section -->
+      <div class="header">
+        <div class="search-section">
+          <input
+            type="text"
+            placeholder="Search by name"
+            class="search-input"
+          />
+          <select class="dropdown">
+            <option value="">Season</option>
+            <option value="off_season">Off Season</option>
+            <option value="season">Season</option>
+            <option value="Other"></option>
+          </select>
+          <button class="search-button">Search</button>
+        </div>
+        <button class="add-crop-button">Add Crop</button>
+      </div>
+
+      <!-- Table Section -->
+      <table class="crop-table">
+        <thead>
+          <tr>
+            <th>Common Name</th>
+            <th>Scientific Name</th>
+            <th>Category</th>
+            <th>Season</th>
+            <th>Crop Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample Rows -->
+          <tr></tr>
+          <!-- Repeat similar rows as needed -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add Crop Popup -->
+    <div class="add-crop-popup">
+      <div class="form-container">
+        <header>
+          <h1>Add Crop</h1>
+          <div class="logo">
+            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+          </div>
+        </header>
+
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              id="common-name"
+              name="Common-name"
+              placeholder="Common Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="scientific-name"
+              name="scientific-name"
+              placeholder="Scientific Name"
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="file-input-container">
+              <input
+                type="file"
+                id="crop-image"
+                name="crop-image"
+                accept="image/*"
+                placeholder="Crop Image"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="category"
+              name="category"
+              placeholder="Category"
+            />
+          </div>
+          <div class="form-group">
+            <input type="text" id="season" name="season" placeholder="Season" />
+          </div>
+          <div class="form-group">
+            <select id="fieldId" name="fieldId">
+              <option value="">Select field</option>
+            </select>
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="btn save-btn" id="cropSaveBtn">
+              Save
+            </button>
+            <button type="button" class="btn back-btn">Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Update Crop Popup -->
+    <div class="update-crop-popup">
+      <div class="form-container">
+        <header>
+          <h1>Update Crop</h1>
+          <div class="logo">
+            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+          </div>
+        </header>
+
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              id="updateCommonName"
+              name="common-name"
+              placeholder="Common Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="updateScientificName"
+              name="scientific-name"
+              placeholder="Scientific Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="updateCategory"
+              name="category"
+              placeholder="Category"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="updateSeason"
+              name="season"
+              placeholder="Season"
+            />
+          </div>
+          <div class="form-group">
+            <div class="file-input-container">
+              <input
+                type="file"
+                id="updateCropImage"
+                name="crop-image"
+                accept="image/*"
+                placeholder="Crop Image"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <select id="updateFieldId" name="fieldId">
+              <option value="">Select Field</option>
+              <!-- Field options will be populated here -->
+            </select>
+          </div>
+          <div class="buttons">
+            <button type="button" class="btn update-btn" id="updateCropBtn">
+              Update
+            </button>
+            <button
+              type="button"
+              class="btn back-btn"
+              id="closeUpdateCropPopup"
+            >
+              Back
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- View Equipment Popup -->
+    <div class="view-crop-popup" id="viewEquipmentPopup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h1 class="header-title">View Equipment</h1>
+          <img
+            src="/assests/images/real_logo.svg"
+            alt="crop-care-logo"
+            class="header-logo"
+          />
+        </div>
+        <div class="crop-details">
+          <div class="details-row">
+            <div class="detail-group">
+              <label>Common Name:</label>
+              <span id="viewcommonName"></span>
+            </div>
+            <div class="detail-group">
+              <label>Scientific Name::</label>
+              <span id="viewScientificName"></span>
+            </div>
+          </div>
+          <!-- <div class="details-row">
+            <div class="detail-group">
+              <label>cropImage:</label>
+              <span id="viewSeason"></span>
+            </div>
+          </div> -->
+          <div class="details-row">
+            <div class="detail-group">
+              <label>category:</label>
+              <span id="viewCategory"></span>
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="detail-group">
+              <label>season:</label>
+              <span id="viewSeason"></span>
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="detail-group">
+              <label>Field Id::</label>
+              <span id="viewField"></span>
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="crop-image">
+              <img id="view-crop-image" src="" alt="Crop Image" />
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button class="close-button" id="closeButton">CLOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
+    <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
+    <script type="module" src="/controller/CropController.js"></script>
+    <script src="/controller/CropControllerSavePopUpController.js"></script>
+    <script src="/controller/updates/UpdateCropPopUpController.js"></script>
+    <script src="/controller/view/ViewCropPopUpPageCntroller.js"></script>
+  </body>
+</html>

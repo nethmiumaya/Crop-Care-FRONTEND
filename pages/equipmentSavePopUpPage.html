@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Equipment</title>
+    <link rel="stylesheet" href="/assests/css/equipmentSavePopUp.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <header>
+        <h1>Add Equipment</h1>
+        <div class="logo">
+          <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+        </div>
+      </header>
+
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            id="equipment-name"
+            name="equipment-name"
+            placeholder="Equipment Name"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="equipment-type"
+            name="equipment-type"
+            placeholder="Equipment Type"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            id="equipmet-status"
+            name="equipmet-status"
+            placeholder="Equipmet Status"
+          />
+        </div>
+        <div class="buttons">
+          <button type="submit" class="btn save-btn">Save</button>
+          <button type="button" class="btn back-btn">Back</button>
+        </div>
+      </form>
+    </div>
+    <script src="/controller/EquipmentController.js"></script>
+    <script src="/controller/EquipmentSavePopUpController.js"></script>
+  </body>
+</html>

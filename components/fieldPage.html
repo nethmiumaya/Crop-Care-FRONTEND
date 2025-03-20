@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Field Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assests/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assests/css/fieldSavePopUpPage.css" />
+    <link rel="stylesheet" href="/assests/css/fieldPage.css" />
+    <link rel="stylesheet" href="/assests/css/view/viewFieldPopUpPage.css" />
+  </head>
+  <body>
+    <div class="field-container">
+      <!-- Search and Add Field Section -->
+      <div class="header">
+        <div class="search-section">
+          <input
+            type="text"
+            placeholder="Search by name"
+            class="search-input"
+          />
+          <button class="search-button">Search</button>
+        </div>
+        <button class="add-field-button">Add Field</button>
+      </div>
+
+      <!-- Table Section -->
+      <table class="field-table">
+        <thead>
+          <tr>
+            <th>Field Name</th>
+            <th>Field Location</th>
+            <th>Extend Size</th>
+            <th>Field Image</th>
+            <th>Another Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample Rows -->
+          <tr></tr>
+          <!-- Repeat similar rows as needed -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add Field Popup -->
+    <div class="add-field-popup">
+      <div class="form-container">
+        <header>
+          <h1>Add Field</h1>
+          <div class="logo">
+            <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+          </div>
+        </header>
+
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              id="field-name"
+              name="field-name"
+              placeholder="Field Name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="field-location"
+              name="field-location"
+              placeholder="Field Location"
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              id="extent-size"
+              name="extent-size"
+              placeholder="Extent Size"
+            />
+          </div>
+
+          <div class="form-group">
+            <div class="file-input-container">
+              <input
+                type="file"
+                id="field-image-01"
+                name="field-image-01"
+                accept="image/*"
+                placeholder="Field Image 01"
+              />
+            </div>
+            <div class="form-group">
+              <div class="file-input-container">
+                <input
+                  type="file"
+                  id="field-image-02"
+                  name="field-image-02"
+                  accept="image/*"
+                  placeholder="Field Image 02"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button type="submit" class="btn save-btn" id="fieldSaveBtn">
+              Save
+            </button>
+            <button type="button" class="btn back-btn">Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Update Field Popup -->
+<div class="update-field-popup">
+  <div class="form-container">
+    <header>
+      <h1>Update Field</h1>
+      <div class="logo">
+        <img src="/assests/images/real_logo.svg" alt="Crop Care Logo" />
+      </div>
+    </header>
+
+    <form>
+      <div class="form-group">
+        <input
+          type="text"
+          id="updateFieldName"
+          name="field-name"
+          placeholder="Field Name"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          id="updateFieldLocation"
+          name="field-location"
+          placeholder="Field Location"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          id="updateExtentSize"
+          name="extent-size"
+          placeholder="Extent Size"
+        />
+      </div>
+      <div class="form-group">
+        <div class="file-input-container">
+          <input
+            type="file"
+            id="updateFieldImage1"
+            name="field-image-01"
+            accept="image/*"
+            placeholder="Field Image 01"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="file-input-container">
+          <input
+            type="file"
+            id="updateFieldImage2"
+            name="field-image-02"
+            accept="image/*"
+            placeholder="Field Image 02"
+          />
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="button" class="btn update-btn" id="updateFieldBtn">
+          Update
+        </button>
+        <button type="button" class="btn back-btn" id="closeUpdateFieldPopup">
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+    <!-- View Field Popup -->
+    <div class="view-field-popup" id="viewFieldPopup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h1 class="header-title">View Field</h1>
+          <img
+            src="/assests/images/real_logo.svg"
+            alt="crop-care-logo"
+            class="header-logo"
+          />
+        </div>
+        <div class="field-details">
+          <div class="details-row">
+            <div class="detail-group">
+              <label>Field Name :</label>
+              <span id="viewFieldName"></span>
+            </div>
+            <div class="detail-group">
+              <label>Field Location :</label>
+              <span id="viewFieldLocation"></span>
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="detail-group">
+              <label>Extend Size :</label>
+              <span id="viewExtendSize"></span>
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="field-image01">
+              <img id="view-field-image01" src="" alt="Field Image 01" />
+            </div>
+          </div>
+          <div class="details-row">
+            <div class="field-image02">
+              <img id="view-field-image02" src="" alt="Field Image 01" />
+            </div>
+          </div>
+          <div class="button-container">
+            <button class="close-button" id="closeButton">CLOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assests/jquery/jquery-3.7.1.min.js"></script>
+    <script src="/assests/bootstrap/js/bootstrap.min.js"></script>
+    <script type="module" src="/controller/FieldController.js"></script>
+    <script src="/controller/FieldSavePopUpController.js"></script>
+    <script src="/controller/updates/UpdateFieldPopUpController.js"></script>
+    <script src="/controller/view/ViewFieldPopUpPageController.js"></script>
+  </body>
+</html>

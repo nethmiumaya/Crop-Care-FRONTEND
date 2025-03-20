@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Vehicle</title>
+    <link rel="stylesheet" href="/assests/css/view/viewVehiclePopUpPage.css" />
+  </head>
+  <body>
+    <!-- Overlay for the Popup -->
+    <div id="popup-overlay" class="popup-overlay">
+      <div class="popup-container">
+        <!-- Close Icon -->
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2 class="popup-title">View Vehicle</h2>
+        <div class="form-container">
+          <div class="form-group">
+            <label for="license">License Plate Number</label>
+            <input type="text" id="license" value="ABC123" readonly />
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" id="category" value="Sedan" readonly />
+          </div>
+          <div class="form-group">
+            <label for="fuel">Fuel Type</label>
+            <input type="text" id="fuel" value="Petrol" readonly />
+          </div>
+          <div class="form-group">
+            <label for="status">Status</label>
+            <input type="text" id="status" value="Available" readonly />
+          </div>
+          <div class="form-group">
+            <label for="remarks">Remarks</label>
+            <input type="text" id="remarks" value="Well maintained" readonly />
+          </div>
+          <div class="form-group">
+            <label for="staff">Staff</label>
+            <input type="text" id="staff" value="John Doe" readonly />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/controller/view/ViewVehiclePopUpController.js"></script>
+  </body>
+</html>
